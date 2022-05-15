@@ -1,12 +1,8 @@
-name: CI
+name: Python CI
+
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+  - push
+  - pull_request
 
 jobs:
   build:
