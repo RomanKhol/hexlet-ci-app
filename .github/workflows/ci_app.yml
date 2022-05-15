@@ -20,6 +20,8 @@ jobs:
         run: make install
       - name: Install 
         run: make setup
+      - name: build
+        run: make build
       - name: Start
         run: make start
       - name: Run test
