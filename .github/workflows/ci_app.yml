@@ -1,0 +1,28 @@
+name: Python CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: |
+          make setup
+          make install
+          make build
+      - name: Start
+        run: |
+          make start
+      - name: Run test
+        run: |
+          make test
+      - name: Run linter
+        run: |
+          make lint
